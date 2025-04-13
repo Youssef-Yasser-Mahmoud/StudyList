@@ -30,8 +30,14 @@ const editStudent = async (req, res) => {
 
 const updateStudent = async (req, res) => {
   const studentId = req.params.id;
-  await Model.students.findByIdAndUpdate(studentId, req.body)
-  res.redirect('/')
-}
+  await Model.students.findByIdAndUpdate(studentId, req.body);
+  res.redirect('/');
+};
 
-module.exports = { getAllStudents, studentForm, pushStudent, getStudent, editStudent, updateStudent };
+const deleteStudent = async (req, res) => {
+  const studentId = req.params.id;
+  await Model.students.findByIdAndDelete(studentId);
+  res.redirect('/');
+};
+
+module.exports = { getAllStudents, studentForm, pushStudent, getStudent, editStudent, updateStudent, deleteStudent };

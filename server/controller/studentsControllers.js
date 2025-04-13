@@ -16,9 +16,10 @@ const pushStudent = async (req, res) => {
   res.redirect('students');
 };
 
-const getStudent = (req, res) => {
-  console.log(req.params.id)
-  res.send('hi')
+const getStudent = async (req, res) => {
+  const studentId = req.params.id;
+  const student = await Model.students.findOne({ _id: studentId });
+  res.render('studentPage', { student });
 };
 
 module.exports = { getAllStudents, studentForm, pushStudent, getStudent };

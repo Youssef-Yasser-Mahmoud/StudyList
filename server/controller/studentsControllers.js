@@ -22,4 +22,16 @@ const getStudent = async (req, res) => {
   res.render('studentPage', { student });
 };
 
-module.exports = { getAllStudents, studentForm, pushStudent, getStudent };
+const editStudent = async (req, res) => {
+  const studentId = req.params.id;
+  const student = await Model.students.findById(studentId);
+  res.render('editStudent', { student });
+};
+
+const updateStudent = async (req, res) => {
+  const studentId = req.params.id;
+  await Model.students.findByIdAndUpdate(studentId, req.body)
+  res.redirect('/')
+}
+
+module.exports = { getAllStudents, studentForm, pushStudent, getStudent, editStudent, updateStudent };

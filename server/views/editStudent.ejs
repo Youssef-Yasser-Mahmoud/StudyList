@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Student</title>
+  <style>
+    form {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align: center;">Edit Student</h2>
+
+  <form action="/students/<%= student._id %>?_method=PUT" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="<%= student.name %>" required />
+
+    <label>Age:</label>
+    <input type="number" name="age" value="<%= student.age %>" required />
+
+    <label>Grade:</label>
+    <select name="grade" required>
+      <option value="A" <%= student.grade === 'A' ? 'selected' : '' %>>A</option>
+      <option value="A+" <%= student.grade === 'A+' ? 'selected' : '' %>>A+</option>
+      <option value="B+" <%= student.grade === 'B+' ? 'selected' : '' %>>B+</option>
+      <option value="B" <%= student.grade === 'B' ? 'selected' : '' %>>B</option>
+      <option value="C+" <%= student.grade === 'C+' ? 'selected' : '' %>>C+</option>
+      <option value="C" <%= student.grade === 'C' ? 'selected' : '' %>>C</option>
+    </select>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>

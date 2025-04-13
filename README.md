@@ -33,7 +33,7 @@ This project allows you to:
 ```bash
 npm install
 ```
-Start MongoDB Make sure you have MongoDB running locally (or you can connect to Atlas).
+## 💻 Start MongoDB Make sure you have MongoDB running locally (or you can connect to Atlas).
 ---
 2. Open your browser:
 ```arduino
@@ -41,7 +41,7 @@ http://localhost:3000/
 ```
 ---
 
-⚙️ Features
+## ⚙️ Features
 GET /students → Show all students.
 
 GET /students/:id → View student details.
@@ -52,11 +52,11 @@ POST /students → Add new student.
 
 PUT /students/:id → Update student.
 
-DELETE /students/:id → Delete student (if added).
+DELETE /students/:id → Delete student.
 
 ---
 
-🌱 Why MVC?
+## 🌱 Why MVC?
 This project follows the MVC design pattern to separate concerns:
 
 Model: Handles MongoDB interaction using Mongoose.
@@ -67,12 +67,11 @@ Controller: Functions handle the logic for each route.
 
 ---
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 Add form validation.
 
 Connect to MongoDB Atlas.
 
 Add authentication.
 
-Implement delete confirmation modals.
 

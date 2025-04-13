@@ -5,5 +5,4 @@ const studentsControllers = require('../controller/studentsControllers');
 
 router.get('/', studentsControllers.getAllStudents);
 
-
 module.exports = router;
